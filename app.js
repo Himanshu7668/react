@@ -1,3 +1,6 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+
 // const heading = React.createElement("h1", {"id": "heading"}, "Hellow form React");
 // const parent = React.createElement("div",
 //     {id: "parent"},
@@ -20,8 +23,8 @@
 const parent = React.createElement("div",
         {id: "parent"},
         React.createElement("div", {id: "child"},
-        [React.createElement("h1", {key:"heading" ,id: "heading"}, "hello from the React!!"), 
-         React.createElement("p", {key: "paragraph",}, "this is the paragraph")
+        [React.createElement("h1", {id: "heading"}, "hello from the React!!"), 
+         React.createElement("p", { }, "this is the paragraph")
         ]
         ) 
 )
