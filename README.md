@@ -19,3 +19,24 @@
 - HTTPS
 - Tree Shaking - Remove the unused code
 - Differetn dev and prod bundles
+
+# Food app architecture
+/**
+ * Header
+ * - Logo
+ * - Nav Items
+ *
+ * Body
+ * - Search
+ * - RestaurantContainer
+ *   - RestaurantCards
+ *      - Img
+ *      - Name of res, Star rating, cuisine, delivery time
+ *
+ * Footer
+ * - Copyright
+ * - Links
+ * - Address
+ * - Contact
+ *
+ */

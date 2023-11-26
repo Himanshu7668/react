@@ -622,6 +622,7 @@ const resData = [
                 "Indian",
                 "Bihari"
             ],
+            "avgRating": 4.5,
             "feeDetails": {
                 "restaurantId": "768699",
                 "fees": [
@@ -800,7 +801,9 @@ const resData = [
 ]
 
 
-module.exports = {
-    resData
-}
+// module.exports = {
+//     resData
+// }
 // module.exports = resData
+
+export default resData
