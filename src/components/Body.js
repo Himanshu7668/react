@@ -1,6 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [restaurantList, setRestaurantList] = useState([]);
@@ -16,11 +17,11 @@ const Body = () => {
     );
     const json = await data.json();
     setRestaurantList(
-      json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants
+      json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
     );
     setFilteRestaurantList(
-      json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants
-    )
+      json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
+    );
   };
 
   return restaurantList.length === 0 ? (
@@ -39,10 +40,10 @@ const Body = () => {
           />
           <button
             onClick={() => {
-              let filteredResList = restaurantList.filter(
-                (res) => res.info.name.toLowerCase().includes(searchText.toLowerCase())
-              )
-              setFilteRestaurantList(filteredResList)
+              let filteredResList = restaurantList.filter((res) =>
+                res.info.name.toLowerCase().includes(searchText.toLowerCase())
+              );
+              setFilteRestaurantList(filteredResList);
             }}
           >
             Search
@@ -52,7 +53,7 @@ const Body = () => {
           className="filter-btn"
           onClick={() => {
             filteredResList = restaurantList.filter(
-              (x) => x.info.avgRating >= 4.5
+              (x) => x.info.avgRating >= 4.2
             );
             setFilteRestaurantList(filteredResList);
           }}
@@ -63,7 +64,9 @@ const Body = () => {
       <div className="res-container">
         {filteredRestaurantList.map((restaurant) => {
           return (
-            <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+            <Link key={restaurant.info.id} to={"/restaurant/" + restaurant.info.id}>
+              <RestaurantCard resData={restaurant} />
+            </Link>
           );
         })}
       </div>
